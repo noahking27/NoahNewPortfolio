@@ -15,15 +15,15 @@ $('.process-box').hover(function() {
 });
 
 /* ---- contact form ---- */
-$("#contactForm").validator().on("submit", function(event) {
-    if (event.isDefaultPrevented()) {
-        formError();
-        submitMSG(false, "Did you fill in the form properly?");
-    } else {
-        event.preventDefault();
-        submitForm();
-    }
-});
+// $("#contactForm").validator().on("submit", function(event) {
+//     if (event.isDefaultPrevented()) {
+//         formError();
+//         submitMSG(false, "Did you fill in the form properly?");
+//     } else {
+//         event.preventDefault();
+//         submitForm();
+//     }
+// });
 // function submitForm() {
 //     // Initiate Variables With Form Content
 //     var name = $("#name").val();
