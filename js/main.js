@@ -24,27 +24,27 @@ $("#contactForm").validator().on("submit", function(event) {
         submitForm();
     }
 });
-function submitForm() {
-    // Initiate Variables With Form Content
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var msg_subject = $("#msg_subject").val();
-    var message = $("#message").val();
-    $.ajax({
-        type: "POST",
-        url: "php/contact.php",
-        data: "name=" + name + "&email=" + email + "&msg_subject=" +
-            msg_subject + "&message=" + message,
-        success: function(text) {
-            if (text == "success") {
-                formSuccess();
-            } else {
-                formError();
-                submitMSG(false, text);
-            }
-        }
-    });
-}
+// function submitForm() {
+//     // Initiate Variables With Form Content
+//     var name = $("#name").val();
+//     var email = $("#email").val();
+//     var msg_subject = $("#msg_subject").val();
+//     var message = $("#message").val();
+//     $.ajax({
+//         type: "POST",
+//         url: "php/contact.php",
+//         data: "name=" + name + "&email=" + email + "&msg_subject=" +
+//             msg_subject + "&message=" + message,
+//         success: function(text) {
+//             if (text == "success") {
+//                 formSuccess();
+//             } else {
+//                 formError();
+//                 submitMSG(false, text);
+//             }
+//         }
+//     });
+// }
 function formSuccess() {
     $("#contactForm")[0].reset();
     submitMSG(true, "Message Submitted!")
@@ -106,7 +106,7 @@ $(document).ready(function() {
     });
     $('.scroll-top').on('click', function(event) {
         event.preventDefault();
-        $('html, body').animate({scrollTop:0}, 1200);       
+        $('html, body').animate({scrollTop:0}, 1200);
     });
 });
 
@@ -168,10 +168,10 @@ $(document).on('click','.navbar-collapse.in',function(e) {
 });
 
 /* ---- rotater text ---- */
-var current = 1; 
-var height = jQuery('.ticker').height(); 
-var numberDivs = jQuery('.ticker').children().length; 
-var first = jQuery('.ticker h1:nth-child(1)'); 
+var current = 1;
+var height = jQuery('.ticker').height();
+var numberDivs = jQuery('.ticker').children().length;
+var first = jQuery('.ticker h1:nth-child(1)');
 setInterval(function() {
     var number = current * -height;
     first.css('margin-top', number + 'px');
